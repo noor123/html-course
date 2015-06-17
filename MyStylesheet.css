@@ -1,0 +1,44 @@
+
+body {
+    font-family: 'Courgette', cursive;
+    background-image: url(kuiken.jpg);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 280px 80px;
+}
+
+.first {
+    color: black;
+    font-size: 20px;
+
+}
+
+h1 {
+    color:red;
+    /* the background should be yellow */
+    background: rgba(50%,90%,10%,0.5);
+    font-family: 'Indie Flower', cursive;
+
+}
+h2 {
+    color: orange;
+}
+p {
+    color:green;
+}
+blockquote {
+    color: blue;
+}
+tr:nth-child(even) {
+    color: lightgray;
+}
+tr:nth-child(odd){
+    color: darkgray;
+}
+th {
+    color: darkblue;
+}
+
+td#special {
+    color: black;
+}
