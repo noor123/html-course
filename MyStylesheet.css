@@ -13,11 +13,18 @@ body {
 
 }
 
+table {
+    background: radial-gradient(circle at center, yellow 10%, green 100%);
+    border: 3px dashed brown;
+}
+
 h1 {
     color:red;
     /* the background should be yellow */
     background: rgba(50%,90%,10%,0.5);
     font-family: 'Indie Flower', cursive;
+    background: linear-gradient(45deg, green, greenyellow, darkgreen);
+    border: 3px dotted brown;
 
 }
 h2 {
