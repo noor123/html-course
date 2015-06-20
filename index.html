@@ -13,11 +13,18 @@
                 background: black;
             }
         </style>
+		<script type="application/javascript">
+		window.onload=function(){
+		    alert("Welkom op Noortjes pagina !!!");
+			document.getElementById("button1").onclick=function(){
+				alert("Goed zo !!!");
+				document.getElementById("button1").value = "Goed zo";
+			}
+		}
+        </script>
     </head>
     <body>
-        <script type="application/javascript">
-            document.body.onload.alert("You are now entering this cool website!");
-        </script>
+        
         <h1>This is a cool website</h1>
         <blockquote class="first">
             Is it?
@@ -46,7 +53,7 @@
             <p>
                 If i'm right <span id = "right"> Piep-piep </span> click on this button:
             </p>
-        <input type = "button" name = "send" value= "click here!!!"/>
+        <input id="button1" type="button" name="send" value="click here!!!" />
 
 
         <h2>Still a <span id="cool"> cool</span> website</h2>
@@ -79,6 +86,6 @@
             </tr>
         </table>
 
-
+		
     </body>
 </html>
