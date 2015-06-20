@@ -40,10 +40,10 @@ blockquote {
     color: blue;
 }
 tr:nth-child(even) {
-    color: lightgray;
+    color: darkred;
 }
 tr:nth-child(odd){
-    color: darkgray;
+    color: red;
 }
 th {
     color: darkblue;

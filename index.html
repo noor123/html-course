@@ -12,14 +12,65 @@
                 font-size: 20px;
                 background: black;
             }
+			#button2 {
+				margin: 15px 0 0 0;
+			}
         </style>
 		<script type="application/javascript">
 		window.onload=function(){
-		    alert("Welkom op Noortjes pagina !!!");
+		    alert("Welkom op mijn website !!!");
 			document.getElementById("button1").onclick=function(){
-				alert("Goed zo !!!");
-				document.getElementById("button1").value = "Goed zo";
+				alert("... world!");
+				document.getElementById("button1").value = "you have already clicked.";
 			}
+			document.getElementById("radioBox1").onclick = function() {
+				document.body.style.backgroundPosition = "180px 80px"; 
+			}
+			document.getElementById("radioBox2").onclick = function() {
+				document.body.style.backgroundPosition = "380px 80px"; 
+			}			
+			document.getElementById("radioBox3").onclick = function() {
+				alert("This is a stupid choice. The chicken likes to move!"); 
+			}
+			document.getElementById("button2").onclick = function() {
+				  document.getElementById("createTable").innerHTML = "";
+				  var width = window.prompt("What is the width of the table? (1 - 10)");
+				  while ( !(width > 0) || !(width < 11)) {
+					width = window.prompt("This is an incorrect input. Please give in a number from 1 to 10.");
+				  }
+				  var height = window.prompt("What is the height of the table?(1 - 10)");
+				  while ( !(height > 0) || !(height < 11)) {
+					height = window.prompt("This is an incorrect input. Please give in a number from 1 to 10.");
+				  }
+				  function createTable(width, height) {
+					var table = document.createElement("table");
+					var tr = document.createElement("tr");
+					for (var i = 1; i < (width|0)+1; i++) {
+						var th = document.createElement("th");
+						th.appendChild(document.createTextNode(i));
+						tr.appendChild(th);
+					}
+					table.appendChild(tr);
+					for (var j=1; j < height; j++) {
+						var tr = document.createElement("tr");
+						var th = document.createElement("th");
+						th.appendChild(document.createTextNode((j|0)+1));
+						tr.appendChild(th);
+						for (var k=1; k < width; k++) {
+							var td = document.createElement("td");
+							td.appendChild(document.createTextNode(((j|0)+1)*((k|0)+1)));
+							tr.appendChild(td);
+						}
+						table.appendChild(tr);
+					}		
+					return table;
+				  }
+				  var c = document.getElementById("createTable");
+				  c.appendChild(createTable(width, height));
+			}
+			
+			
+			
 		}
         </script>
     </head>
@@ -29,33 +80,34 @@
         <blockquote class="first">
             Is it?
         </blockquote>
-        <svg xmlns="http://www.w3.org/2000/svg" width="225" height="200">
-            <circle fill="blue" cx="110" cy="100" r="80"/>
-            <circle fill="green" cx="85" cy="85" r="15"/>
-            <circle fill="green" cx="130" cy="85" r="15"/>
-            <ellipse fill="red" cx="110" cy="110" rx="40" ry="15" height="15" width="60"/>
-            <circle fill="black" cx="110" cy="150" r="15"/>
-            <circle fill="black" cx="85" cy="85" r="5"/>
-            <circle fill="black" cx="130" cy="85" r="5"/>
-            <circle fill="brown" cx="110" cy="20" r="20"/>
-            <circle fill="brown" cx="90" cy="25" r="20"/>
-            <circle fill="brown" cx="130" cy="25" r="20"/>
-            <circle fill="brown" cx="70" cy="30" r="20"/>
-            <circle fill="brown" cx="150" cy="30" r="20"/>
-            <circle fill="brown" cx="50" cy="35" r="20"/>
-            <circle fill="brown" cx="170" cy="35" r="20"/>
-            <circle fill="brown" cx="30" cy="40" r="20"/>
-            <circle fill="brown" cx="190" cy="40" r="20"/>
-        </svg>
             <p>
                 Yes, <abbr title = "this website">it</abbr> is!
             </p>
             <p>
                 If i'm right <span id = "right"> Piep-piep </span> click on this button:
             </p>
-        <input id="button1" type="button" name="send" value="click here!!!" />
+			<input id="button1" type="button" name="send" value="Hello..." />
+		    <p>
+                Do you want the cool chick to move?
+            </p>
+		<div>	
+		<input id="radioBox1" type="radio" name="radio"/>
+		<label for="radio">Yes, to the left</label>
+		</div>
+		<div>	
+		<input id="radioBox2" type="radio" name="radio"/>
+		<label for="radio">Yes, to the right</label>
+		</div>
+		<div>	
+		<input id="radioBox3" type="radio" name="radio"/>
+		<label for="radio">No thanks</label>
+		</div>
 
-
+		<input id="button2" type="button" name="makeTable" value="Create table" />
+		
+		<div id="createTable">
+		</div>
+		
         <h2>Still a <span id="cool"> cool</span> website</h2>
             <p>
                 This paragraph<br/>&nbsp&nbsp is on more<br/>&nbsp&nbsp&nbsp&nbsp then one <abbr title = "Typefault. It's line (of course)">lne</abbr><br/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWow! That's amazing!<br/>
@@ -85,7 +137,25 @@
                 <td>Morisson</td>
             </tr>
         </table>
-
+		
+		        <svg xmlns="http://www.w3.org/2000/svg" width="225" height="200">
+            <circle fill="blue" cx="110" cy="100" r="80"/>
+            <circle fill="green" cx="85" cy="85" r="15"/>
+            <circle fill="green" cx="130" cy="85" r="15"/>
+            <ellipse fill="red" cx="110" cy="110" rx="40" ry="15" height="15" width="60"/>
+            <circle fill="black" cx="110" cy="150" r="15"/>
+            <circle fill="black" cx="85" cy="85" r="5"/>
+            <circle fill="black" cx="130" cy="85" r="5"/>
+            <circle fill="brown" cx="110" cy="20" r="20"/>
+            <circle fill="brown" cx="90" cy="25" r="20"/>
+            <circle fill="brown" cx="130" cy="25" r="20"/>
+            <circle fill="brown" cx="70" cy="30" r="20"/>
+            <circle fill="brown" cx="150" cy="30" r="20"/>
+            <circle fill="brown" cx="50" cy="35" r="20"/>
+            <circle fill="brown" cx="170" cy="35" r="20"/>
+            <circle fill="brown" cx="30" cy="40" r="20"/>
+            <circle fill="brown" cx="190" cy="40" r="20"/>
+        </svg>
 		
     </body>
 </html>
